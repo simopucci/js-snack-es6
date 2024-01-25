@@ -5,25 +5,34 @@ const bikes = [
     },
     {
         name: 'bmx',
-        weight: 100
+        weight: 10
     },
     {
         name: 'ultramegabici',
-        weight: 450
+        weight: 12.4
     },
     {
         name: 'bmxplus4gultrapro',
-        weight: 2000
+        weight: 21
     },
     {
         name: 'mountainbike',
-        weight: 40
+        weight: 7
     },
     {
         name: 'spingicheparto',
-        weight: 368
+        weight: 777
     }
 ];
 
-const minWeightBike = Math.min(...bikes.map(bike => bike.weight));
-console.log(`La bici con il peso minore pesa: ${minWeightBike}`);
+let minWeightBike = bikes[0];
+
+for (let bike of bikes) {
+    if (bike.weight < minWeightBike.weight){
+        minWeightBike = bike;
+    }
+};
+console.log(minWeightBike);
+
+const {name, weight} = minWeightBike;
+console.log(`La ${name} con il peso di ${weight}Kg è la bici più leggera`);
